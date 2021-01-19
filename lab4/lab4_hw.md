@@ -35,12 +35,6 @@ homerange <- readr::read_csv("data/Tamburelloetal_HomeRangeDatabase.csv")
 ```
 
 ```
-## Warning in unlink(c(requestFile, responseFile)): cannot get info on 'C:/Users/
-## jalat/AppData/Local/Temp/RtmpIl9jao/rstudio-ipc-requests-2df8aac12b7.rds',
-## reason 'The system cannot find the file specified'
-```
-
-```
 ## 
 ## -- Column specification --------------------------------------------------------
 ## cols(
@@ -506,30 +500,9 @@ arrange(snakey, desc(mean.hra.m2 ))
 ```
 
 ```r
-snakey
+view(snakey)
 ```
-
-```
-## # A tibble: 41 x 24
-##    taxon common.name class order family genus species primarymethod N    
-##    <fct> <chr>       <chr> <chr> <chr>  <chr> <chr>   <chr>         <chr>
-##  1 snak~ western wo~ rept~ squa~ colub~ carp~ vermis  radiotag      1    
-##  2 snak~ eastern wo~ rept~ squa~ colub~ carp~ viridis radiotag      10   
-##  3 snak~ racer       rept~ squa~ colub~ colu~ constr~ telemetry     15   
-##  4 snak~ yellow bel~ rept~ squa~ colub~ colu~ constr~ telemetry     12   
-##  5 snak~ ringneck s~ rept~ squa~ colub~ diad~ puncta~ mark-recaptu~ <NA> 
-##  6 snak~ eastern in~ rept~ squa~ colub~ drym~ couperi telemetry     1    
-##  7 snak~ great plai~ rept~ squa~ colub~ elap~ guttat~ telemetry     12   
-##  8 snak~ western ra~ rept~ squa~ colub~ elap~ obsole~ telemetry     18   
-##  9 snak~ hognose sn~ rept~ squa~ colub~ hete~ platir~ telemetry     8    
-## 10 snak~ European w~ rept~ squa~ colub~ hier~ viridi~ telemetry     32   
-## # ... with 31 more rows, and 15 more variables: mean.mass.g <dbl>,
-## #   log10.mass <dbl>, alternative.mass.reference <chr>, mean.hra.m2 <dbl>,
-## #   log10.hra <dbl>, hra.reference <chr>, realm <chr>, thermoregulation <chr>,
-## #   locomotion <chr>, trophic.guild <chr>, dimension <chr>, preymass <dbl>,
-## #   log10.preymass <dbl>, PPMR <dbl>, prey.size.reference <chr>
-```
-The snake with the smallest hra is the snubnosed viper which is a funky-looking viper that tends to be rather small. According to Wikipedia and the photos online, the viper has a zig-zag pattern on its back with a yellow-tipper tail. 
+The snake with the smallest hra is the namaqua dwarf adder which is a funky-looking viper that tends to be rather small. According to Wiki the snake lives in Southern Africa and likes to take long walks on the beach. 
 
 
 ## Push your final code to GitHub!
