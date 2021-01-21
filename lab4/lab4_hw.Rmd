@@ -46,6 +46,10 @@ names(homerange)
 summary(homerange)
 ```
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **3. Change the class of the variables `taxon` and `order` to factors and display their levels.**  
 ```{r}
@@ -53,6 +57,7 @@ as.factor(homerange$taxon)
 levels(homerange$taxon)
 homerange$taxon <- as.factor(homerange$taxon)
 ```
+</div>
 
 
 
