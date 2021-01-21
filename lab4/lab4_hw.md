@@ -1,13 +1,12 @@
 ---
 title: "Lab 4 Homework"
 author: "Jala Atufa"
-date: "2021-01-19"
+date: "2021-01-20"
 output:
   html_document: 
     theme: spacelab
     keep_md: yes
 ---
-
 
 
 ## Instructions

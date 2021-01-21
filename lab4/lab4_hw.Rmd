@@ -1,17 +1,16 @@
 ---
 title: "Lab 4 Homework"
-author: "Please Add Your Name Here"
+author: "Jala Atufa"
 date: "`r Sys.Date()`"
 output:
-  html_document:
+  html_document: 
     theme: spacelab
-    toc: no
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 ## Instructions
 Answer the following questions and complete the exercises in RMarkdown. Please embed all of your code and push your final work to your repository. Your final lab report should be organized, clean, and run free from errors. Remember, you must remove the `#` for the included code chunks to run. Be sure to add your name to the author header above.  
 
@@ -30,24 +29,102 @@ Reference: Tamburello N, Cote IM, Dulvy NK (2015) Energy and the scaling of anim
 Data: http://datadryad.org/resource/doi:10.5061/dryad.q5j65/1  
 
 **1. Load the data into a new object called `homerange`.**
+```{r}
+homerange <- readr::read_csv("data/Tamburelloetal_HomeRangeDatabase.csv")
+```
+
 
 **2. Explore the data. Show the dimensions, column names, classes for each variable, and a statistical summary. Keep these as separate code chunks.**  
+```{r}
+glimpse(homerange)
+```
+```{r}
+names(homerange)
+
+```
+```{r}
+summary(homerange)
+```
+
 
 **3. Change the class of the variables `taxon` and `order` to factors and display their levels.**  
+```{r}
+as.factor(homerange$taxon)
+levels(homerange$taxon)
+homerange$taxon <- as.factor(homerange$taxon)
+```
+
+
 
 **4. What taxa are represented in the `homerange` data frame? Make a new data frame `taxa` that is restricted to taxon, common name, class, order, family, genus, species.**  
+```{r}
+levels(homerange$taxon)
+```
+
+```{r}
+taxa <- select(homerange, "taxon", "common.name", "class", "order", "family", "genus" , "species")
+taxa
+```
+Taxon includes 9 taxa: birds, lake fishes, lizards, mammals, marine fishes, river fishes, snakes, snakes, tortoises, turtles. 
 
 **5. The variable `taxon` identifies the large, common name groups of the species represented in `homerange`. Make a table the shows the counts for each of these `taxon`.**  
+```{r}
+table(homerange$taxon)
+```
+
 
 **6. The species in `homerange` are also classified into trophic guilds. How many species are represented in each trophic guild.**  
+```{r}
+table(homerange$trophic.guild)
+```
+There are 342 carnivores and 227 herbivores. 
 
 **7. Make two new data frames, one which is restricted to carnivores and another that is restricted to herbivores.**  
+```{r}
+carnie_dataframe <- filter(homerange, trophic.guild == "carnivore")
+herbie_dataframe <- filter(homerange, trophic.guild=="herbivore")
+```
+
+
 
 **8. Do herbivores or carnivores have, on average, a larger `mean.hra.m2`? Remove any NAs from the data.**  
+```{r}
+carnie_average <- carnie_dataframe$mean.hra.m2
+mean(carnie_average, na.rm = T)
+```
+```{r}
+herbie_average <- herbie_dataframe$mean.hra.m2
+mean(herbie_average, na.rm = T)
+```
+The average mean.hra.m2 is greater in herbivores. 
 
 **9. Make a new dataframe `deer` that is limited to the mean mass, log10 mass, family, genus, and species of deer in the database. The family for deer is cervidae. Arrange the data in descending order by log10 mass. Which is the largest deer? What is its common name?**  
+```{r}
+names(homerange)
+```
+
+```{r}
+homerange2 <- select (homerange, "mean.mass.g", "log10.mass" , "family", "genus", "species" )
+deer<-filter(homerange2, family == "cervidae")
+arrange(deer, desc(log10.mass))
+view(deer)
+```
+The largest deer is a species called alces, in the genus alces. 
+```{r}
+alces_hunt_df <-filter(homerange, genus == "alces")
+alces_hunt_df
+```
+
+Commonname for alces alces is the moose. 
 
 **10. As measured by the data, which snake species has the smallest homerange? Show all of your work, please. Look this species up online and tell me about it!** **Snake is found in taxon column**    
+```{r}
+snakey <- filter(homerange, taxon == "snakes")
+arrange(snakey, desc(mean.hra.m2 ))
+view(snakey)
+```
+The snake with the smallest hra is the namaqua dwarf adder which is a funky-looking viper that tends to be rather small. According to Wiki the snake lives in Southern Africa and likes to take long walks on the beach. 
+
 
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences.   
