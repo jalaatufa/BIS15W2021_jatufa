@@ -1,6 +1,6 @@
 ---
 title: "dplyr Superhero"
-date: "2021-01-21"
+date: "2021-01-25"
 output:
   html_document: 
     theme: spacelab
@@ -31,10 +31,10 @@ library("tidyverse")
 ```
 
 ```
-## v ggplot2 3.3.3     v purrr   0.3.4
-## v tibble  3.0.4     v dplyr   1.0.2
-## v tidyr   1.1.2     v stringr 1.4.0
-## v readr   1.4.0     v forcats 0.5.0
+## √ ggplot2 3.3.3     √ purrr   0.3.4
+## √ tibble  3.0.5     √ dplyr   1.0.3
+## √ tidyr   1.1.2     √ stringr 1.4.0
+## √ readr   1.4.0     √ forcats 0.5.0
 ```
 
 ```
@@ -455,6 +455,10 @@ superhero_info %>%
 ## 3 Thor~ Female blue      Asga~ Blond         175 Marvel C~ <NA>       good     
 ## # ... with 1 more variable: weight <dbl>
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 8. Among the bad guys, who are the male humans over 200 inches in height?
 
@@ -480,6 +484,7 @@ bad_guys %>%
 ## 10 Kill~ Male   red       Meta~ No Hair       244 DC Comics green      bad      
 ## # ... with 12 more rows, and 1 more variable: weight <dbl>
 ```
+</div>
 
 9. OK, so are there more good guys or bad guys that are bald (personal interest)?
 
@@ -892,6 +897,12 @@ superhero_powers %>%
 ## #   heat_resistance <lgl>, ...
 ```
 There are 97 heros with all these powers. 
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
 ## `kinesis`
 15. We are only interested in the superheros that do some kind of "kinesis". How would we isolate them from the `superhero_powers` data?
 
@@ -917,6 +928,7 @@ superhero_powers %>%
 ## # ... with 657 more rows, and 4 more variables: thirstokinesis <lgl>,
 ## #   biokinesis <lgl>, terrakinesis <lgl>, vitakinesis <lgl>
 ```
+</div>
 
 16. Pick your favorite superhero and let's see their powers!
 
