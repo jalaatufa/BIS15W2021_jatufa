@@ -96,8 +96,8 @@ filter(fish, near(scalelength, 8, tol = .25))
 
 4. Filter the fish data to include fish with a scalelength between 2 and 4.
 ```{r}
-filter(fish, between(scalelength, 2,4))
-filter(dataframe, between (variable, ))
+#filter(fish, between(scalelength, 2,4))
+#filter(dataframe, between (variable, ))
 ```
 
 ## Using `filter()` on multiple conditions
@@ -141,11 +141,7 @@ names(mammals)
 ```
 
 
-```{r}
 
-'''{r}
-glimpse(mammals)
-```
 
 
 ```{r}
