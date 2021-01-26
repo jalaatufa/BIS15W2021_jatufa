@@ -2,10 +2,11 @@
 title: "summarize practice, `count()`, `across()`"
 date: "`r Sys.Date()`"
 output:
-  html_document:
+  html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    keep_md: yes
   pdf_document:
     toc: yes
 ---
@@ -112,18 +113,18 @@ penguins %>%
 names(penguins)
 ```
 ```{r}
-penguins %>% 
-  filter(!is.na(bill_length_mm))
-  summarize(mean_bill_length_mm= mean(bill_length_mm))
+#penguins %>% 
+ # filter(!is.na(bill_length_mm))
+  #summarize(mean_bill_length_mm= mean(bill_length_mm))
 ```
 
 
 ```{r}
-penguins %>% 
-  filter(species == "Adelie") %>% 
-  select(species, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) %>% 
+#penguins %>% 
+ # filter(species == "Adelie") %>% 
+  #select(species, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) %>% 
   
-  summarise(mean_bill_length=mean(bill_length_mm), mean_bill_depth=mean(bill_depth_mm), mean_
+#  summarise(mean_bill_length=mean(bill_length_mm), mean_bill_depth=mean(bill_depth_mm), mean_
  
   
 
