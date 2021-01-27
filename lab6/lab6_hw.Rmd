@@ -98,6 +98,10 @@ names(fisheries_new)
 fisheries_new %>%
   summarize(n_distinct(asfis_species_number))
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 6. Which country had the largest overall catch in the year 2000?
 ```{r}
@@ -122,6 +126,7 @@ fisheries_tidy %>%
   summarize(sum_ceph_2008_to_2012 = sum(catch, between(year, 2008, 2012), na.rm = TRUE)) %>% 
   arrange(desc(sum_ceph_2008_to_2012))
 ```
+</div>
 
 9. Which species had the highest catch total between 2008-2012? (hint: Osteichthyes is not a species)
 ```{r}
