@@ -507,6 +507,10 @@ fisheries_new %>%
 ##                                <int>
 ## 1                               1551
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 6. Which country had the largest overall catch in the year 2000?
 
@@ -562,10 +566,6 @@ fisheries_tidy %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 16 x 2
 ##    country                  sum_ceph_2008_to_2012
 ##    <fct>                                    <dbl>
@@ -586,6 +586,7 @@ fisheries_tidy %>%
 ## 15 Viet Nam                                     5
 ## 16 Israel                                       1
 ```
+</div>
 
 9. Which species had the highest catch total between 2008-2012? (hint: Osteichthyes is not a species)
 
@@ -596,10 +597,6 @@ fisheries_new %>%
   group_by(asfis_species_name) %>% 
   summarize(catchcount = sum(catch, na.rm= T)) %>% 
   arrange(desc(catchcount))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
