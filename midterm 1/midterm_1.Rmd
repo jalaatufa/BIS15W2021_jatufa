@@ -27,10 +27,16 @@ library(dplyr)
 library(janitor)
 
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 ## Questions
 **1. (2 points) Briefly explain how R, RStudio, and GitHub work together to make work flows in data science transparent and repeatable. What is the advantage of using RMarkdown in this context?**  
 R is a program typically used in biological sciences for data analysis that is made much more comprehensible with the addition of RStudio. Github is a site that acts as a cloud for different codes and if made public those codes can be shared and accessed by users all over the world to accomplish similar goals. 
+
+</div>
 
 **2. (2 points) What are the three types of `data structures` that we have discussed? Why are we using data frames for BIS 15L?**
 In this class we have utilized vectors, matrices, and data frames. In BIS 15L, we have used data frames because they are a convenient way to store data and can convert
