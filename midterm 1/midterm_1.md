@@ -1,7 +1,7 @@
 ---
 title: "Midterm 1"
 author: "Jala Atufa :)"
-date: "2021-01-29"
+date: "2021-02-02"
 output:
   html_document: 
     theme: spacelab
@@ -80,6 +80,10 @@ elephants
 ## 10  11.7   233  M    
 ## # ... with 278 more rows
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 
 ```r
@@ -90,7 +94,7 @@ class(elephants$sex)
 ```
 ## [1] "character"
 ```
-
+</div>
 
 
 **5. (2 points) How many male and female elephants are represented in the data?**
@@ -131,13 +135,9 @@ elephants %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 2
 ##   sex   mean_age
-##   <chr>    <dbl>
+## * <chr>    <dbl>
 ## 1 F        12.8 
 ## 2 M         8.95
 ```
@@ -149,18 +149,17 @@ elephants %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 2
 ##   sex   mean_height
-##   <chr>       <dbl>
+## * <chr>       <dbl>
 ## 1 F            190.
 ## 2 M            185.
 ```
 
-
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 **8. (2 points) How does the average height of elephants compare by sex for individuals over 25 years old. Include the min and max height as well as the number of individuals in the sample as part of your analysis.**
 
 ```r
@@ -171,16 +170,13 @@ elephants %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 3
 ##   sex   mean_height max_height
 ##   <chr>       <dbl>      <dbl>
 ## 1 F            233.       278.
 ## 2 M            273.       304.
 ```
+</div>
 
 
 For the next series of questions, we will use data from a study on vertebrate community composition and impacts from defaunation in [Gabon, Africa](https://en.wikipedia.org/wiki/Gabon). One thing to notice is that the data include 24 separate transects. Each transect represents a path through different forest management areas.  
@@ -294,13 +290,9 @@ animals %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 3
 ##   hunt_cat average_diversity_birds average_diversity_mammals
-##   <fct>                      <dbl>                     <dbl>
+## * <fct>                      <dbl>                     <dbl>
 ## 1 Moderate                    1.62                      1.68
 ## 2 High                        1.66                      1.74
 ```
@@ -322,6 +314,12 @@ close_village
 ##     <dbl>    <dbl>       <dbl>      <dbl>     <dbl>       <dbl>
 ## 1    0.08     70.4      0.0967       24.1      3.66        1.59
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
 
 ```r
 far_village <- animals %>% 
@@ -336,6 +334,7 @@ far_village
 ##     <dbl>    <dbl>       <dbl>      <dbl>     <dbl>       <dbl>
 ## 1    1.31     60.7       0.543       30.0      3.36        4.05
 ```
+</div>
 
 **12. (4 points) Based on your interest, do one exploratory analysis on the `gabon` data of your choice. This analysis needs to include a minimum of two functions in `dplyr.`**
 
