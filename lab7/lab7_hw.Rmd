@@ -49,6 +49,7 @@ amphibio <- readr:: read_csv("data/amphibio.csv")
 ```{r}
 amniota %>% 
   summarise_all(~(sum(is.na(.))))
+```
 ```{r}
 amniota_tidy <- amniota %>% 
   na_if("-999")
