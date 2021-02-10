@@ -1,7 +1,7 @@
 ---
 title: "Lab 8 Homework"
 author: "Jala Atufa :-)"
-date: "2021-02-04"
+date: "2021-02-09"
 output:
   html_document: 
     theme: spacelab
@@ -32,7 +32,7 @@ library(here)
 ```
 
 ```
-## here() starts at C:/Users/jalat/Desktop/BIS15W2021_jatufa
+## here() starts at D:/TA files/Winter2021 BIS15L/students_rep/BIS15W2021_jatufa
 ```
 
 ## Data
@@ -296,7 +296,7 @@ mean_enterococci_long <-sydneybeaches_long %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'site' (override with `.groups` argument)
+## `summarise()` has grouped output by 'site'. You can override using the `.groups` argument.
 ```
 
 ```r
