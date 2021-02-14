@@ -1,7 +1,7 @@
 ---
 title: "Lab 9 Homework"
 author: "Jala Atufa"
-date: "2021-02-09"
+date: "2021-02-13"
 output:
   html_document: 
     theme: spacelab
@@ -137,6 +137,24 @@ naniar::miss_var_summary(colleges_tidy)
 pop_city<- colleges_tidy %>% 
   count(city) %>% 
   arrange(desc(n))
+pop_city
+```
+
+```
+## # A tibble: 161 x 2
+##    city              n
+##    <chr>         <int>
+##  1 Los Angeles      24
+##  2 San Diego        18
+##  3 San Francisco    15
+##  4 Sacramento       10
+##  5 Berkeley          9
+##  6 Oakland           9
+##  7 Claremont         7
+##  8 Pasadena          6
+##  9 Fresno            5
+## 10 Irvine            5
+## # ... with 151 more rows
 ```
 There are the most universities in LA. 
 3. Based on your answer to #2, make a plot that shows the number of colleges in the top 10 cities.
@@ -162,13 +180,6 @@ costly_colleges <- colleges_tidy %>%
   group_by(city) %>%
   summarize(mean_cost = mean(cost_attendance, na.rm= T))%>%
   arrange(desc(mean_cost))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 costly_colleges
 ```
 

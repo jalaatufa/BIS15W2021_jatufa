@@ -69,6 +69,7 @@ naniar::miss_var_summary(colleges_tidy)
 pop_city<- colleges_tidy %>% 
   count(city) %>% 
   arrange(desc(n))
+pop_city
 ```
 There are the most universities in LA. 
 3. Based on your answer to #2, make a plot that shows the number of colleges in the top 10 cities.
