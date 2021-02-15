@@ -1,7 +1,7 @@
 ---
 title: "Lab 10 Homework"
 author: "Jala Atufa"
-date: "2021-02-11"
+date: "2021-02-15"
 output:
   html_document: 
     theme: spacelab
@@ -83,7 +83,7 @@ deserts %>%
 ```
 ## # A tibble: 1 x 2
 ##   `"NA"`     n
-##   <chr>  <int>
+## * <chr>  <int>
 ## 1 NA     34786
 ```
 Data are relatively tidy upon viewing the data. NA are present in the data, being recorded as "NA" - thus will be easy to filter out later on (better than it being -9999999)
@@ -110,7 +110,7 @@ deserts %>%
 ```
 ## # A tibble: 26 x 2
 ##    genus                n
-##    <chr>            <int>
+##  * <chr>            <int>
 ##  1 Ammodramus           2
 ##  2 Ammospermophilus   437
 ##  3 Amphispiza         303
@@ -157,7 +157,7 @@ deserts %>%
 ```
 ## # A tibble: 4 x 2
 ##   taxa        n
-##   <chr>   <int>
+## * <chr>   <int>
 ## 1 Bird      450
 ## 2 Rabbit     75
 ## 3 Reptile    14
@@ -255,10 +255,6 @@ deserts %>%
   group_by(species) %>% 
   summarize(mean_weight = mean(weight, na.rm = T)) %>% 
   arrange(desc(mean_weight))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
