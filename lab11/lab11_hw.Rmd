@@ -107,6 +107,10 @@ gapminder %>%
        x = "Year",
        y= "Life Expectancy")
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **5. How has life expectancy changed between 1952-2007 for each continent?**
 ```{r}
@@ -120,6 +124,8 @@ gapminder %>%
        x = "Continent",
        y= "Life Expectancy Average ")
 ```
+
+</div>
 
 **6. We are interested in the relationship between per capita GDP and life expectancy; i.e. does having more money help you live longer?**
 ```{r}
@@ -141,6 +147,7 @@ pop_growth<-gapminder %>%
   filter(year=="1952"|year=="2007") %>% 
   mutate(pop_growth= pop-lag(pop, default=first(pop))) %>% 
   arrange(desc(pop_growth))
+pop_growth
 ```
 
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**

@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Jala Atufa"
-date: "2021-02-16"
+date: "2021-02-17"
 output:
   html_document: 
     theme: spacelab
@@ -94,20 +94,13 @@ gapminder$year <- as.factor(gapminder$year)
 life_expectancy <- gapminder %>%
   group_by(year) %>%
   summarize(mean_life_expectancy = mean(life_exp))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 life_expectancy
 ```
 
 ```
 ## # A tibble: 12 x 2
 ##    year  mean_life_expectancy
-##    <fct>                <dbl>
+##  * <fct>                <dbl>
 ##  1 1952                  49.1
 ##  2 1957                  51.5
 ##  3 1962                  53.6
@@ -162,7 +155,7 @@ gapminder %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'year' (override with `.groups` argument)
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
 ```
 
 ```
@@ -196,6 +189,10 @@ gapminder %>%
 ```
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **5. How has life expectancy changed between 1952-2007 for each continent?**
 
@@ -212,10 +209,12 @@ gapminder %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'year' (override with `.groups` argument)
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
 ```
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+
+</div>
 
 **6. We are interested in the relationship between per capita GDP and life expectancy; i.e. does having more money help you live longer?**
 
@@ -240,6 +239,25 @@ pop_growth<-gapminder %>%
   filter(year=="1952"|year=="2007") %>% 
   mutate(pop_growth= pop-lag(pop, default=first(pop))) %>% 
   arrange(desc(pop_growth))
+pop_growth
+```
+
+```
+## # A tibble: 284 x 7
+## # Groups:   country [142]
+##    country       continent year  life_exp        pop gdp_percap pop_growth
+##    <fct>         <fct>     <fct>    <dbl>      <int>      <dbl>      <int>
+##  1 China         Asia      2007      73.0 1318683096      4959.  762419569
+##  2 India         Asia      2007      64.7 1110396331      2452.  738396331
+##  3 United States Americas  2007      78.2  301139947     42952.  143586947
+##  4 Indonesia     Asia      2007      70.6  223547000      3541.  141495000
+##  5 Brazil        Americas  2007      72.4  190010647      9066.  133408087
+##  6 Pakistan      Asia      2007      65.5  169270617      2606.  127924057
+##  7 Bangladesh    Asia      2007      64.1  150448339      1391.  103561480
+##  8 Nigeria       Africa    2007      46.9  135031164      2014.  101912068
+##  9 Mexico        Americas  2007      76.2  108700891     11978.   78556574
+## 10 Philippines   Asia      2007      71.7   91077287      3190.   68638596
+## # ... with 274 more rows
 ```
 
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
