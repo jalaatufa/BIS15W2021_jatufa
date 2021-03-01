@@ -1,7 +1,7 @@
 ---
 title: "Lab 12 Homework"
 author: "Jala Atufa"
-date: "2021-02-25"
+date: "2021-03-01"
 output:
   html_document: 
     theme: spacelab
@@ -27,6 +27,10 @@ library(albersusa)
 
 ## Load the Data
 We will use two separate data sets for this homework.  
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 1. The first [data set](https://rcweb.dartmouth.edu/~f002d69/workshops/index_rspatial.html) represent sightings of grizzly bears (Ursos arctos) in Alaska.  
 2. The second data set is from Brandell, Ellen E (2021), Serological dataset and R code for: Patterns and processes of pathogen exposure in gray wolves across North America, Dryad, [Dataset](https://doi.org/10.5061/dryad.5hqbzkh51).  
@@ -56,6 +60,8 @@ grizzly %>%
 ```
 ##  chr [1:3] "bear.id" "longitude" "latitude"
 ```
+# Missing data
+</div>
 
 
 ```r
@@ -184,6 +190,10 @@ ggmap(griz_map) +
 ```
 
 ![](lab12_hw_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 5. Let's switch to the wolves data. Load the data and evaluate its structure.
 
@@ -203,6 +213,8 @@ wolf <- read_csv(here("lab12", "data", "wolves_data", "wolves_dataset.csv"))
 ## )
 ## i Use `spec()` for the full column specifications.
 ```
+# Missing data
+</div>
 
 6. How many distinct wolf populations are included in this study? Mae a new object that restricts the data to the wolf populations in the lower 48 US states.
 

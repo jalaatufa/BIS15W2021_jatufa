@@ -28,6 +28,10 @@ library(albersusa)
 
 ## Load the Data
 We will use two separate data sets for this homework.  
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 1. The first [data set](https://rcweb.dartmouth.edu/~f002d69/workshops/index_rspatial.html) represent sightings of grizzly bears (Ursos arctos) in Alaska.  
 2. The second data set is from Brandell, Ellen E (2021), Serological dataset and R code for: Patterns and processes of pathogen exposure in gray wolves across North America, Dryad, [Dataset](https://doi.org/10.5061/dryad.5hqbzkh51).  
@@ -39,6 +43,8 @@ grizzly %>%
   names() %>% 
   glimpse()
 ```
+# Missing data
+</div>
 
 ```{r}
 grizzly %>% 
@@ -68,11 +74,17 @@ ggmap(griz_map) +
   geom_point(data=grizzly, aes(longitude, latitude), size=2.5, color="red")+
   labs(x="Longitude", y="Latitude", title="Grizzly Bear Sightings")
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 5. Let's switch to the wolves data. Load the data and evaluate its structure.
 ```{r}
 wolf <- read_csv(here("lab12", "data", "wolves_data", "wolves_dataset.csv"))
 ```
+# Missing data
+</div>
 
 6. How many distinct wolf populations are included in this study? Mae a new object that restricts the data to the wolf populations in the lower 48 US states.
 ```{r}
