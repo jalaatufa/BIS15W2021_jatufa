@@ -104,6 +104,7 @@ ggmap(map2) +
 ## Albers USA
 The Albers USA [package](https://github.com/hrbrmstr/albersusa) is a very fast way to produce clean maps that include nice overlays of counties across the US. I haven't explored it fully, but here are some nice examples.
 ```{r}
+remotes::install_gitlab("hrbrmstr/albersusa")
 library(albersusa)
 ```
 
